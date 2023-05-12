@@ -1,4 +1,5 @@
 # likelion_toyproject
 
 # ERD
-<img src = "C:\Users\xz305\OneDrive\바탕 화면\likelion\toyproject\erd_image.png">
+![erd_image](https://github.com/oro7l/likeliontoyproject/assets/127576762/01dc2c35-9a3b-4e06-a6e2-3e254dcdbae3)
+
