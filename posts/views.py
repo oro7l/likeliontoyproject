@@ -7,7 +7,7 @@ import json
 
 
 # Create your views here.
-
+# 1. 방명록 작성하기
 @require_http_methods(["POST"])
 def create_post(request):
     body = json.loads(request.body.decode('utf-8'))
@@ -28,10 +28,11 @@ def create_post(request):
 
     return JsonResponse({
         'status' : 200,
-        'message' : '게시글 목록 조회 성공',
+        'message' : '방명록 작성 성공',
         'data' : new_post_json
     })
 
+# 2. 방명록 리스트 보여주기
 @require_http_methods(["GET"])
 def get_post_all(request) :    
         post_all = Post.objects.all()
@@ -48,10 +49,11 @@ def get_post_all(request) :
 
         return JsonResponse({
             'status' : 200,
-            'message' : '게시글 조회 성공',
+            'message' : '방명록 목록 조회 성공',
             'data' : post_json_all
         })
-    
+
+# 3.방명록 삭제하기
 @require_http_methods(["DELETE"])
 def delete_post(request, id) : 
     delete_post = get_object_or_404(Post, pk=id)
@@ -59,11 +61,6 @@ def delete_post(request, id) :
 
     return JsonResponse({
         'status' : 200,
-        'message' : '게시글 삭제 성공',
+        'message' : '방명록 삭제 성공',
         'data' : None
     })
-'''
-1. 방명록 작성하기
-2. 방명록 리스트 보여주기
-3. 방명록 삭제
-'''
